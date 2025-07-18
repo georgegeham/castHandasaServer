@@ -22,7 +22,6 @@ router.post("/", async (req, res, next) => {
         "INSERT INTO Reward (rname) OUTPUT INSERTED.ID, INSERTED.rname VALUES (@rname)"
       );
     const inserted = response.recordset[0];
-    console.log(inserted);
     res.status(201).json(inserted);
   } catch (err) {
     console.log("Error while Saving Reward", err);

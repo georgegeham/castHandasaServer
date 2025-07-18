@@ -27,7 +27,6 @@ router.post("/", async (req, res, next) => {
       Tournaments,
       Rewards,
     } = req.body;
-    console.log(ID);
     const response = await Pool.request()
       .input("ID", sql.Int, ID)
       .input("pname", pname)
@@ -45,7 +44,6 @@ router.post("/", async (req, res, next) => {
     const playId = response.recordset[0].ID;
     if (Array.isArray(Tournaments)) {
       for (const tournament of Tournaments) {
-        console.log(tournament.ID);
         await Pool.request()
           .input("play_id", sql.Int, playId)
           .input("tournament_id", sql.Int, tournament.ID).query(`

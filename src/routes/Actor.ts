@@ -16,8 +16,8 @@ router.post("/", async (req, res, next) => {
       Plays,
       Rewards,
     } = req.body;
-    const fname = name.split(" ")[0];
-    const lname = name.split(" ")[1];
+    const fname = name.split(" ")[0] || " ";
+    const lname = name.split(" ")[1] || " ";
     const pool = await Pool.connect();
     // 1. Insert Actor
     const actorResult = await pool
