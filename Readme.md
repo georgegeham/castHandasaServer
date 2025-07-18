@@ -10,7 +10,7 @@ This is the backend API server for the CastHandasa application — a platform fo
 
 ## 📁 Project Structure:
 
-    ```bash
+    ```
     castHandasaServer/
     │
     ├── src/
@@ -62,9 +62,9 @@ PORT=5050
 
 ---
 
-## ⚒️ Sample Endpoints
+## ⚒️ Sample Endpoints:
 
-    ```bash
+    ```http
     GET    /tournaments          # List all tournaments
     POST   /tournaments          # Create a new tournament
     GET    /rewards              # Get all rewards
