@@ -8,9 +8,9 @@ This is the backend API server for the CastHandasa application — a platform fo
 
 ---
 
-## 📁 Project Structure
+## 📁 Project Structure:
 
-    ```
+    ```bash
     castHandasaServer/
     │
     ├── src/
@@ -64,7 +64,7 @@ PORT=5050
 
 ## ⚒️ Sample Endpoints
 
-    ```http
+    ```bash
     GET    /tournaments          # List all tournaments
     POST   /tournaments          # Create a new tournament
     GET    /rewards              # Get all rewards
@@ -73,9 +73,9 @@ PORT=5050
 
 ---
 
-## 🐳 Docker Usage
+## 🐳 Docker Usage:
 
-    ```
+    ```bash
     docker build -t casthandasa-server .
 
     docker run -p 5050:5050 casthandasa-server
