@@ -11,18 +11,18 @@ This is the backend API server for the CastHandasa application — a platform fo
 ## 📁 Project Structure:
 
 ```
-    castHandasaServer/
-    │
-    ├── src/
-    │   ├── controllers/        # Contains all route handler logic
-    │   ├── routes/             # API route definitions
-    │   ├── db/                 # Database connection logic
-    │   ├── index.ts            # Entry point of the app
-    │   └── config.ts           # Configuration and setup files
-    ├── .env                    # Environment variables file (not committed)
-    ├── tsconfig.json           # TypeScript compiler options
-    ├── Dockerfile              # Docker image definition
-    └── package.json            # Project metadata and dependencies
+castHandasaServer/
+│
+├── src/
+│   ├── controllers/        # Contains all route handler logic
+│   ├── routes/             # API route definitions
+│   ├── db/                 # Database connection logic
+│   ├── index.ts            # Entry point of the app
+│   └── config.ts           # Configuration and setup files
+├── .env                    # Environment variables file (not committed)
+├── tsconfig.json           # TypeScript compiler options
+├── Dockerfile              # Docker image definition
+└── package.json            # Project metadata and dependencies
 ```
 
 ---
@@ -64,11 +64,11 @@ PORT=5050
 
 ## ⚒️ Sample Endpoints:
 
-```http
-    GET    /tournaments          # List all tournaments
-    POST   /tournaments          # Create a new tournament
-    GET    /rewards              # Get all rewards
-    POST   /rewards              # Add a new reward
+```bash
+GET    /tournaments          # List all tournaments
+POST   /tournaments          # Create a new tournament
+GET    /rewards              # Get all rewards
+POST   /rewards              # Add a new reward
 ```
 
 ---
@@ -76,9 +76,9 @@ PORT=5050
 ## 🐳 Docker Usage:
 
 ```bash
-    docker build -t casthandasa-server .
+docker build -t casthandasa-server .
 
-    docker run -p 5050:5050 casthandasa-server
+docker run -p 5050:5050 casthandasa-server
 ```
 
 ---
