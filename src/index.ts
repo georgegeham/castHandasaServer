@@ -8,7 +8,7 @@ import PlayRouter from "./routes/Plays";
 import ActorRouter from "./routes/Actor";
 dotenv.config();
 const app = express();
-const PORT = process.env.PORT || 5050;
+const PORT = Number(process.env.PORT) || 5050;
 let Pool;
 //JSON Parser
 app.use(express.json());
@@ -20,11 +20,14 @@ app.use("/tournaments", TournamentRouter);
 app.use("/plays", PlayRouter);
 app.use("/reward", RewardRouter);
 app.use("/actor", ActorRouter);
+app.use("/", (req, res, next) => {
+  res.send("It's Ok I'm Here");
+});
 (async () => {
   try {
     const Pool = await connectDB();
     if (Pool) {
-      app.listen(PORT, () => {
+      app.listen(PORT, "0.0.0.0", () => {
         console.log(`Server is Runing on http://localhost:${PORT}`);
       });
     }
