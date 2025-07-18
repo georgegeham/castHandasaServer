@@ -13,7 +13,7 @@ router.post("/", async (req, res, next) => {
       DateOfEntrance,
       NoPlays,
       ImgURL,
-      Play,
+      Plays,
       Rewards,
     } = req.body;
     const fname = name.split(" ")[0];
@@ -36,11 +36,9 @@ router.post("/", async (req, res, next) => {
       `);
 
     const actorId = actorResult.recordset[0].ID;
-
-    if (Play && Play.length > 0) {
-      for (const p of Play) {
-        await pool
-          .request()
+    if (Plays && Plays.length > 0) {
+      for (const p of Plays) {
+        await Pool.request()
           .input("ActorID", sql.Int, actorId)
           .input("PlayID", sql.Int, p.ID).query(`
             INSERT INTO Actor_Plays (actor_id, play_id)
@@ -51,8 +49,7 @@ router.post("/", async (req, res, next) => {
 
     if (Rewards && Rewards.length > 0) {
       for (const r of Rewards) {
-        await pool
-          .request()
+        await Pool.request()
           .input("ActorID", sql.Int, actorId)
           .input("RewardID", sql.Int, r.ID).query(`
             INSERT INTO Actor_Rewards (actor_id, reward_id)
