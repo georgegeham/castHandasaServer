@@ -10,7 +10,7 @@ This is the backend API server for the CastHandasa application — a platform fo
 
 ## 📁 Project Structure:
 
-    ```
+```
     castHandasaServer/
     │
     ├── src/
@@ -23,7 +23,7 @@ This is the backend API server for the CastHandasa application — a platform fo
     ├── tsconfig.json           # TypeScript compiler options
     ├── Dockerfile              # Docker image definition
     └── package.json            # Project metadata and dependencies
-    ```
+```
 
 ---
 
@@ -64,22 +64,22 @@ PORT=5050
 
 ## ⚒️ Sample Endpoints:
 
-    ```http
+```http
     GET    /tournaments          # List all tournaments
     POST   /tournaments          # Create a new tournament
     GET    /rewards              # Get all rewards
     POST   /rewards              # Add a new reward
-    ```
+```
 
 ---
 
 ## 🐳 Docker Usage:
 
-    ```bash
+```bash
     docker build -t casthandasa-server .
 
     docker run -p 5050:5050 casthandasa-server
-    ```
+```
 
 ---
 
