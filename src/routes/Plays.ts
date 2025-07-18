@@ -56,11 +56,10 @@ router.post("/", async (req, res, next) => {
     }
     if (Array.isArray(Rewards)) {
       for (const reward of Rewards) {
-        console.log(reward.ID);
         await Pool.request()
           .input("play_id", sql.Int, playId)
           .input("reward_id", sql.Int, reward.ID).query(`
-        INSERT INTO Play_Reward (play_id, reward_id)
+        INSERT INTO Play_Rewards (play_id, reward_id)
         VALUES (@play_id, @reward_id)
       `);
       }
