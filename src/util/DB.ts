@@ -8,7 +8,7 @@ const config = {
   database: process.env.DB_DATABASE!,
   options: {
     encrypt: true,
-    trustServerCertificate: true,
+    trustServerCertificate: false,
   },
 };
 let Pool: sql.ConnectionPool | null = null;
