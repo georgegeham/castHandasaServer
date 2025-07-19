@@ -57,7 +57,7 @@ router.post("/", async (req, res, next) => {
           `);
       }
     }
-
+    console.log("Actor Created" , actorId)
     res.status(201).json({ message: "Actor created", actorId });
   } catch (err) {
     console.error("❌ Failed to insert Actor:", err);

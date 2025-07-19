@@ -21,7 +21,6 @@ router.post("/", async (req, res, next) => {
         `INSERT INTO Tournaments (tname) OUTPUT INSERTED.ID, INSERTED.tname VALUES (@tname)`
       );
     const inserted = result.recordset[0];
-    console.log(inserted);
     res.status(201).json(inserted);
   } catch (err) {
     console.log("Error While Creating Tournament", err);
